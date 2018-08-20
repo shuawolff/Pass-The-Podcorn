@@ -6,6 +6,7 @@ const app = express();
 
 const cors = require('cors');
 
+// Setting up port
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function() {
     console.log(`listening on port ${PORT}`);
@@ -14,10 +15,18 @@ app.listen(PORT, function() {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+// Set up logger
 app.use(logger('dev'));
 
 app.use(cors());
 
+const podcastRoutes = require('./routes/podcastRoutes');
+app.use('/podcasts', podcastRoutes);
+
 app.get('/', function(req, res) {
-    res.json('hello');
+    res.redirect('/podcasts');
 });
+
+app.get('*', function(req, res) {
+    res.status(404).send({message: 'Oops! Not found.'});
+  });
