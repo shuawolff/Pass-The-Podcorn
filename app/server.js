@@ -20,9 +20,11 @@ app.use(logger('dev'));
 
 app.use(cors());
 
+// Setup podcast routes
 const podcastRoutes = require('./routes/podcastRoutes');
 app.use('/podcasts', podcastRoutes);
 
+// Redirect all users to podcasts
 app.get('/', function(req, res) {
     res.redirect('/podcasts');
 });

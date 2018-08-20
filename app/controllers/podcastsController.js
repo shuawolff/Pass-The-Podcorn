@@ -28,7 +28,49 @@ function showOne(req, res) {
     });
 };
 
+function createPodcast(req, res) {
+    db.createPodcast(req.body)
+    .then(podcast => {
+        res.json({
+            message: 'ok',
+            data: { podcast },
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(400).json({message: '400', err});
+    });
+};
+
+function updatePodcast(req, res) {
+    db.updatePodcast(req.body, req.params.id)
+    .then(podcast => {
+        res.json({
+            message: 'ok',
+            data: { podcast },
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(400).json({message: '400', err});
+    });
+}
+
+function deletePodcast(req, res) {
+    db.deletePodcast(req.params.id)
+    .then(podcast => {
+        res.json({
+            message: 'ok',
+        });
+    })
+}
+
+
+
 module.exports = {
     showAll,
-    showOne
+    showOne,
+    createPodcast,
+    updatePodcast,
+    deletePodcast
 }
