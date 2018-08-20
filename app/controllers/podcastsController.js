@@ -3,10 +3,7 @@ const db =  require('../models/podcasts');
 function showAll(req, res) {
     db.allPodcasts()
     .then(podcasts => {
-        res.json({
-            message: 'ok',
-            data: { podcasts },
-        });
+        res.json(podcasts);
     })
     .catch(err => {
         console.log(err);
