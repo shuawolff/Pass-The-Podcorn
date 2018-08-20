@@ -24,6 +24,9 @@ app.use(cors());
 const podcastRoutes = require('./routes/podcastRoutes');
 app.use('/podcasts', podcastRoutes);
 
+const reviewRoutes = require('./routes/reviewRoutes');
+app.use('/reviews', reviewRoutes);
+
 // Redirect all users to podcasts
 app.get('/', function(req, res) {
     res.redirect('/podcasts');
