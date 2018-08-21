@@ -11,7 +11,7 @@ class CreatePodcast extends Component {
       episodes: '',
       description: '',
       poster_url: '',
-      trailer_url: '',
+      trailer_url: '' 
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -45,7 +45,6 @@ class CreatePodcast extends Component {
             </header>
             <section className="modal-card-body">
               <div>
-                {/* <h2>Create Podcast</h2> */}
                 <form onSubmit={this.handleSubmit}>
                   <input
                     type="text"
