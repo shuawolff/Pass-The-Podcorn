@@ -7,4 +7,17 @@ export function fetchPodcasts() {
         throw Error(err);
       });
   }
+
+  export function savePodcast(podcast) {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(podcast),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+  
+    return fetch(`${BASE_URL}/podcasts`, opts)
+      .then(resp => resp.json());
+  }
   

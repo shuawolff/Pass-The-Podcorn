@@ -5,7 +5,13 @@ import React, { Component } from 'react';
     super(props);
 
     this.state = {
-      title: '', 
+      title: '',
+      creator: '',
+      genre: '',
+      episodes: '',
+      description: '',
+      poster_url: '',
+      trailer_url: '' 
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -44,6 +50,13 @@ import React, { Component } from 'react';
             value={this.state.creator} 
             onChange={this.handleChange} 
             placeholder="Creator"
+          />
+          <input
+            type="text"
+            name="genre"
+            value={this.state.genre} 
+            onChange={this.handleChange} 
+            placeholder="Genre"
           />
           <input
             type="text"
