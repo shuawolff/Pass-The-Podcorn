@@ -13,9 +13,11 @@ class App extends Component {
       currentView: 'Podcasts',
       selectedReview: '',
       podcasts: [],
-      reviews: []
+      reviews: [],
+      createModal: 'modal'
     }
-    this.onSubmit = this.onSubmit.bind(this)
+    this.createPodcast = this.createPodcast.bind(this)
+    this.toggleCreateModal =  this.toggleCreateModal.bind(this)
   }
 
   componentDidMount() {
@@ -24,7 +26,19 @@ class App extends Component {
 
   }
 
-  onSubmit(podcast) {
+  toggleCreateModal() {
+    this.state.createModal === 'modal'
+    ?
+      this.setState({
+        createModal: 'modal is-active'
+      })
+    :
+    this.setState({
+      createModal: 'modal'
+    })
+  }
+
+  createPodcast(podcast) {
     savePodcast(podcast)
     .then(data => {
       fetchPodcasts()
@@ -36,7 +50,7 @@ render() {
   return (
     <div className="App">
     <PodcastIndex podcasts={this.state.podcasts} />
-    <CreatePodcast onSubmit={this.onSubmit}/>
+    <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     </div>
   );
 }
