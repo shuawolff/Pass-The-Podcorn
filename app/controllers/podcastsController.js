@@ -14,10 +14,7 @@ function showAll(req, res) {
 function showOne(req, res) {
     db.onePodcast(req.params.id)
     .then(podcast => {
-        res.json({
-            message: 'ok',
-            data: { podcast },
-        });
+        res.json(podcast);
     })
     .catch(err => {
         console.log(err);
