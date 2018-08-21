@@ -79,26 +79,6 @@ componentDidMount() {
   })
   }
 
-  toggleCreateModal() {
-    this.state.createModal === 'modal'
-    ?
-      this.setState({
-        createModal: 'modal is-active'
-      })
-    :
-    this.setState({
-      createModal: 'modal'
-    })
-  }
-
-  createPodcast(podcast) {
-    savePodcast(podcast)
-    .then(data => {
-      fetchPodcasts()
-      .then(data => this.setState({podcasts:data}));
-  })
-  }
-
 render() {
   return (
     <div className="App">
