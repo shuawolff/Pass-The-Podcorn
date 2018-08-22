@@ -9,7 +9,10 @@ class PodcastIndex extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 80b55ae8ea79a885a5a0b1ef94f2026c4d52fb39
   handleChange(evt) {
     this.setState({
       search: evt.target.value,
