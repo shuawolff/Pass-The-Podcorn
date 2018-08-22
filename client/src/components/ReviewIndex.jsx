@@ -1,10 +1,6 @@
 import React from 'react';
 
 //Render reviews for a specific podcast based on podcast id
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
 export default (props) => {
   return (
     <div className="container-grid aside-2 reviews">

@@ -42,8 +42,6 @@ export function fetchOnePodcast(id){
     .then(resp => resp.json());
   };
 
-
-
   export function fetchReviews(podcast_id) {
     return fetch(`${BASE_URL}/reviews/podcast/${podcast_id}`)
     .then(resp => resp.json())
@@ -51,9 +49,5 @@ export function fetchOnePodcast(id){
       throw Error(err);
     })
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
 
 

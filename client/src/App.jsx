@@ -25,11 +25,7 @@ class App extends Component {
       selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
-      podcastDetails: []
-
       podcastDetails: [],
-
-
     }
 
     this.createPodcast = this.createPodcast.bind(this)
@@ -50,19 +46,12 @@ class App extends Component {
 
   fetchAllReviews(id, title) {
     fetchReviews(id)
-<<<<<<< HEAD
       .then(data => {
         this.setState({ 
         reviews: data,
         podcastDetails: title
       })}
      );
-=======
-      .then(data => {this.setState({ 
-        reviews: data,
-        podcastDetails: title 
-      }) });
->>>>>>> upstream/master
   }
   
   toggleEditModal() {
@@ -99,11 +88,7 @@ class App extends Component {
       fetchPodcasts()
       .then(data => this.setState({ podcasts: data }));
       });
-<<<<<<< HEAD
     }
-=======
-  }
->>>>>>> upstream/master
 
     searchBar(data) {
       this.setState({
@@ -151,7 +136,6 @@ class App extends Component {
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
-<<<<<<< HEAD
         <div className="container-grid aside-1 podcastDetails">
         <h3 className="heading-2">Podcast Details<br/>
         </h3>
@@ -159,8 +143,6 @@ class App extends Component {
           <li className="list-item-container"></li>
         </ul>
     </div>
-=======
->>>>>>> upstream/master
     <Footer />
       </div>
     );
