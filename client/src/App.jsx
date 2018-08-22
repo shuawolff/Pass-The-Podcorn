@@ -22,10 +22,9 @@ class App extends Component {
       selectedPodcast: '',
       createModal: 'modal',
       editModal: 'modal',
-      selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
-      podcastDetails: [],
+      podcastDetails: [{}],
     }
 
     this.createPodcast = this.createPodcast.bind(this)
@@ -136,13 +135,6 @@ class App extends Component {
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
-        <div className="container-grid aside-1 podcastDetails">
-        <h3 className="heading-2">Podcast Details<br/>
-        </h3>
-        <ul className="list-container">
-          <li className="list-item-container"></li>
-        </ul>
-    </div>
     <Footer />
       </div>
     );

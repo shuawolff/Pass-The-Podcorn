@@ -32,9 +32,6 @@ class PodcastIndex extends Component {
         {afterSearch.map(podcast => (
           <div className="list-container" key={podcast.id}>
             <img src={podcast.poster_url} alt="Podcast Poster"/><a onClick={(e) => this.props.view(podcast.id, [podcast])}><p className='podcastList' key={podcast.id}>{podcast.title} {podcast.creator}</p></a>
-            <button onClick={(e) => this.props.edit(podcast.id)}>Edit</button>
-            <img src={podcast.poster_url} alt="Podcast Poster"/><a onClick={(e) => this.props.view(podcast.id, [podcast])}><p className='podcastList' key={podcast.id}>{podcast.title} {podcast.creator}</p></a>       
-            <img src={podcast.poster_url} alt="Podcast Poster"/><a onClick={(e) => this.props.view(podcast.id, [podcast])}><p className='podcastList' key={podcast.id}>{podcast.title} {podcast.creator}</p></a>
           </div>))}
       </div>
     )
