@@ -22,6 +22,7 @@ class App extends Component {
       selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
+      podcastDetails: []
 
     }
 
@@ -41,9 +42,14 @@ class App extends Component {
       .then(data => this.setState({ podcasts: data }));
   }
 
-  fetchAllReviews(id) {
+  fetchAllReviews(id, title) {
     fetchReviews(id)
-      .then(data => {this.setState({ reviews: data }) });
+      .then(data => {
+        this.setState({ 
+        reviews: data,
+        podcastDetails: title
+      })}
+     );
   }
   
   toggleEditModal() {
@@ -135,13 +141,6 @@ class App extends Component {
           <li className="list-item-container"></li>
         </ul>
     </div>
-    <div className="container-grid aside-2 reviews">
-        <h3 className="heading-3">Reviews<br/>
-        </h3>
-        <ul className="list-container">
-          <li className="list-item-container"></li>
-        </ul>
-      </div>
     <Footer />
       </div>
     );

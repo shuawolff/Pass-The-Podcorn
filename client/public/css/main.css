@@ -25,6 +25,7 @@
   padding-right: 10px;
   padding-left: 10px;
   background-color: #fff;
+  overflow-y: scroll;
 }
 
 .container-grid.aside-1 {
@@ -35,7 +36,7 @@
 
 .container-grid.main {
   background-color: #acac62;
-
+  height: 80vh;
   grid-area: main;
 }
 

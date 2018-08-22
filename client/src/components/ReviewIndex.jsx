@@ -7,7 +7,7 @@ export default (props) => {
     <div className="container-grid aside-2 reviews">
       <h3 className="heading-3">Reviews<br /></h3>
       {props.reviews.map(review => (
-        <li key={review.review_id}>{review.username} {review.content}</li>
+        <li key={review.review_id}>{review.username} - {review.content}</li>
       ))}
     </div>
   )

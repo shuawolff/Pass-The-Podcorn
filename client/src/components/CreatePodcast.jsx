@@ -10,7 +10,7 @@ class CreatePodcast extends Component {
       genre: '',
       episodes: '',
       description: '',
-      poster_url: '',
+      poster_url: 'https://static.thenounproject.com/png/187803-200.png',
       trailer_url: ''
     };
 
@@ -93,18 +93,18 @@ class CreatePodcast extends Component {
                   <br />
                   <input
                     type="text"
-                    name="poster"
+                    name="poster_url"
                     value={this.state.poster_url}
                     onChange={this.handleChange}
-                    placeholder="Poster url"
+                    placeholder="Poster Url"
                   />
                   <br />
                   <input
                     type="text"
-                    name="trailer"
+                    name="trailer_url"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer url"
+                    placeholder="Trailer Url"
                   />
                   <br />
                   <br />
