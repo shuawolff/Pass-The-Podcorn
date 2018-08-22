@@ -143,8 +143,6 @@ class App extends Component {
         </ul>
       </div>
     <Footer />
-
-    {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
       </div>
     );
   }

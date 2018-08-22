@@ -12,3 +12,10 @@ h2 {
   font-size: 27px;
   font-weight: bold;
 }
+
+.button {
+  font-size: 20px;
+}
+.is-danger {
+  margin-left: 130px;
+}

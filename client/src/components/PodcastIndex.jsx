@@ -9,10 +9,6 @@ class PodcastIndex extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 80b55ae8ea79a885a5a0b1ef94f2026c4d52fb39
   handleChange(evt) {
     this.setState({
       search: evt.target.value,
@@ -31,7 +27,7 @@ class PodcastIndex extends Component {
 
     return (
       <div className="container-grid main podcasts">
-        <h2 class="heading-1">Podcasts</h2>
+        <h2 className="heading-1">Podcasts</h2>
         <SortButtons search={this.handleChange} filterFunction={this.props.filterFunction} searchBar={this.state.search} />
         {afterSearch.map(podcast => (
           <div className="list-container" key={podcast.id}>
