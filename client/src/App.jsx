@@ -114,11 +114,10 @@ class App extends Component {
           .then(data => this.setState({ podcasts: data }));
       })
   }
-
   render() {
     return (
 
-      <div className="App container-grid">
+      <div className="App main-grid">
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar}/>
@@ -126,28 +125,23 @@ class App extends Component {
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
 
-        <div class="container-grid aside-1 podcastDetails">
-          <h3 class="heading-2">Podcast Details<br />
-          </h3>
-          <ul class="list-container">
-            <li class="list-item-container"></li>
-            <li class="list-item-container"></li>
-            <li class="list-item-container"></li>
-          </ul>
-        </div>
-        <div class="container-grid aside-2 reviews">
-          <h3 class="heading-3">Reviews<br />
-          </h3>
-          <ul class="list-container">
-            <li class="list-item-container"></li>
-            <li class="list-item-container"></li>
-            <li class="list-item-container"></li>
-          </ul>
-        </div>
-        <Footer />
+        <div className="container-grid aside-1 podcastDetails">
+        <h3 className="heading-2">Podcast Details<br/>
+        </h3>
+        <ul className="list-container">
+          <li className="list-item-container"></li>
+        </ul>
+    </div>
+    <div className="container-grid aside-2 reviews">
+        <h3 className="heading-3">Reviews<br/>
+        </h3>
+        <ul className="list-container">
+          <li className="list-item-container"></li>
+        </ul>
+      </div>
+    <Footer />
 
-        {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
-
+    {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
       </div>
     );
   }

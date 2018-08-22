@@ -9,7 +9,6 @@ class PodcastIndex extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
-
   handleChange(evt) {
     this.setState({
       search: evt.target.value,
