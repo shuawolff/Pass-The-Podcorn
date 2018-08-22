@@ -51,5 +51,9 @@ export function fetchOnePodcast(id){
       throw Error(err);
     })
   };
+<<<<<<< HEAD
+
+=======
+>>>>>>> upstream/master
 
 

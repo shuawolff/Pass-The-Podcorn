@@ -5,6 +5,7 @@ import EditPodcast from './components/EditPodcast';
 import PodcastIndex from './components/PodcastIndex';
 import ReviewIndex from './components/ReviewIndex';
 import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
+
 import './App.css';
 import Footer from './components/Footer';
 
@@ -17,12 +18,14 @@ class App extends Component {
       selectedReview: '',
       podcasts: [],
       reviews: [],
+      selectedPodcast: '',
       createModal: 'modal',
       editModal: 'modal',
       selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
       podcastDetails: []
+
 
     }
 
@@ -125,7 +128,6 @@ class App extends Component {
   
   render() {
     return (
-
       <div className="App main-grid">
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
