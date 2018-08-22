@@ -41,13 +41,15 @@ export function fetchOnePodcast(id){
     return fetch(`${BASE_URL}/podcasts/${podcast.id}`, opts)
     .then(resp => resp.json());
   };
-  
+
+
+
   export function fetchReviews(podcast_id) {
     return fetch(`${BASE_URL}/reviews/podcast/${podcast_id}`)
-      .then(resp => resp.json())
-      .catch(err => {
-        throw Error(err);
-      })
-  }
+    .then(resp => resp.json())
+    .catch(err => {
+      throw Error(err);
+    })
+  };
 
 
