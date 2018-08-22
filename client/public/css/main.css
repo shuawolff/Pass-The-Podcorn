@@ -1,14 +1,13 @@
 /* Layout Elements */
 
-body.main-grid {
+.main-grid {
   display: grid;
   padding-bottom: 10px;
   min-height: 100vh;
   background-color: #eee;
-
-  grid-template-areas: 'header' 'main' 'aside-1' 'aside-2' 'footer';
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr repeat(3 , 100px);
+  color: white;
+  grid-template-areas: 'header header' 'main aside-1' 'main aside-2' 'main aside-2' 'footer footer';
+  grid-template-columns: 3fr 2fr;
   grid-row-gap: 2px;
   grid-column-gap: 2px;
 }
@@ -68,14 +67,20 @@ body.main-grid {
     padding-right: 7px;
     font-style: italic;
     font-size: 26px;
+    color: rgb(246,255,0);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   }
-
+  h3 {
+    color: rgb(246,255,0);
+  }
+  h2 {
+    color: rgb(246,255,0);
+  }
   h2.title {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    color: #fff;
+    color: rgb(246,255,0);
     vertical-align: text-top;
     text-align: center;
     font-size: 33px;
@@ -96,7 +101,7 @@ body.main-grid {
   }
 
   h2.pass.title {
-    color: #fff;
+    color: rgb(246,255,0);
   }
 
   h3.heading-2 {
@@ -115,23 +120,23 @@ body.main-grid {
   }
 
   .container-grid.header {
-    background-color: #1d9d7e;
+    background-color: rgb(64, 64, 64);
   }
 
   .container-grid.main.podcasts {
-    background-color: #1d9d7e;
+    background-color: rgb(64, 64, 64);
   }
 
   .container-grid.aside-1.podcastDetails {
-    background-color: #1d9d7e;
+    background-color: rgb(64, 64, 64);
   }
 
   .container-grid.aside-2.reviews {
-    background-color: #1d9d7e;
+    background-color: rgb(64, 64, 64);
   }
 
   .container-grid.footer {
-    background-color: #1d9d7e;
+    background-color: rgb(64, 64, 64);
     background-image: none;
     background-attachment: scroll;
     background-position: left top;
