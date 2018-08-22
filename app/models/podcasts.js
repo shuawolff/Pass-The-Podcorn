@@ -4,6 +4,7 @@ function allPodcasts() {
     return db.query(`
     SELECT * 
     FROM podcasts
+    ORDER BY title
     `)
 };
 

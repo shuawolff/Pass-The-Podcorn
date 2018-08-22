@@ -11,7 +11,7 @@ class CreatePodcast extends Component {
       episodes: '',
       description: '',
       poster_url: '',
-      trailer_url: '' 
+      trailer_url: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -49,12 +49,12 @@ class CreatePodcast extends Component {
                   <input
                     type="text"
                     name="title"
-                    required="required" 
+                    required="required"
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder="Title"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="text"
                     name="creator"
@@ -63,7 +63,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Creator"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="text"
                     name="genre"
@@ -72,7 +72,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Genre"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="number"
                     name="episodes"
@@ -81,7 +81,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Episodes"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="text"
                     name="description"
@@ -90,7 +90,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Description"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="text"
                     name="poster"
@@ -98,7 +98,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Poster url"
                   />
-                  <br/>
+                  <br />
                   <input
                     type="text"
                     name="trailer"
@@ -106,12 +106,12 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Trailer url"
                   />
-                  <br/>
-                  <br/>
-            <footer className="modal-card-foot">
-              <button type="submit" value="Create Podcast" className="button is-success">Save changes</button>
-              <button onClick={this.props.toggle} className="button">Cancel</button>
-            </footer>
+                  <br />
+                  <br />
+                  <footer className="modal-card-foot">
+                    <button type="submit" value="Create Podcast" className="button is-success">Save changes</button>
+                    <button onClick={this.props.toggle} className="button">Cancel</button>
+                  </footer>
                 </form>
               </div>
             </section>

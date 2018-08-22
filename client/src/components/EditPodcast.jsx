@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
- 
- class EditPodcast extends Component {
+
+class EditPodcast extends Component {
   constructor(props) {
     super(props);
 
@@ -9,27 +9,52 @@ import React, { Component } from 'react';
       creator: this.props.podcast.creator,
       genre: this.props.podcast.genre,
       episodes: this.props.podcast.episodes,
-      description:this.props.podcast.description,
+      description: this.props.podcast.description,
       poster_url: this.props.podcast.poster_url,
-      trailer_url: this.props.podcast.trailer_url 
+      trailer_url: this.props.podcast.trailer_url,
+      id: this.props.podcast.id
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggle =  this.toggle.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.podcast.id !== prevProps.podcast.id) {
+      this.setState({
+        title: this.props.podcast.title,
+        creator: this.props.podcast.creator,
+        genre: this.props.podcast.genre,
+        episodes: this.props.podcast.episodes,
+        description: this.props.podcast.description,
+        poster_url: this.props.podcast.poster_url,
+        trailer_url: this.props.podcast.trailer_url,
+        id: this.props.podcast.id
+      })
+    }
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-  const data = {
-    title: this.state.title,
-    creator: this.state.creator,
-    genre: this.state.genre,
-    episodes: this.state.episodes,
-    description: this.state.description,
-    poster_url: this.state.poster_url,
-    trailer_url: this.state.trailer_url
+    const data = {
+      title: this.state.title,
+      creator: this.state.creator,
+      genre: this.state.genre,
+      episodes: this.state.episodes,
+      description: this.state.description,
+      poster_url: this.state.poster_url,
+      trailer_url: this.state.trailer_url,
+      id: this.state.id
+    }
+    this.props.onSubmit(data);
+    this.props.toggle();
   }
-   this.props.onSubmit(data);
+
+  toggle(e) {
+    e.preventDefault();
+    this.props.toggle();
   }
 
   handleChange(evt) {
@@ -40,65 +65,89 @@ import React, { Component } from 'react';
   }
 
   render() {
-     return (
+    return (
       <div>
-        <h2>Edit Podcast</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title} 
-            onChange={this.handleChange} 
-            placeholder="Title"
-          />
-          <input
-            type="text"
-            name="creator"
-            value={this.state.creator} 
-            onChange={this.handleChange} 
-            placeholder="Creator"
-          />
-          <input
-            type="text"
-            name="genre"
-            value={this.state.genre} 
-            onChange={this.handleChange} 
-            placeholder="Genre"
-          />
-          <input
-            type="text"
-            name="episodes"
-            value={this.state.episodes} 
-            onChange={this.handleChange} 
-            placeholder="Episodes"
-          />
-          <input
-            type="text"
-            name="description"
-            value={this.state.description} 
-            onChange={this.handleChange} 
-            placeholder="Description"
-          />
-          <input
-            type="text"
-            name="poster"
-            value={this.state.poster_url} 
-            onChange={this.handleChange} 
-            placeholder="Poster url"
-          />
-          <input
-            type="text"
-            name="trailer"
-            value={this.state.trailer_url} 
-            onChange={this.handleChange} 
-            placeholder="Trailer url"
-          />
-          <input type="submit" value="Edit Podcast" />
-          <input type="submit" value="Delete Podcast" />
-        </form>
-      </div>
+        <div className={this.props.active}>
+          <div className="modal-background"></div>
+          <div className="modal-card">
+            <header className="modal-card-head">
+              <p className="modal-card-title">Edit Podcast</p>
+              <button onClick={this.props.toggle} className="delete" aria-label="close"></button>
+            </header>
+            <section className="modal-card-body">
+              <div>
+                <form onSubmit={this.handleSubmit}>
+                  <input
+                    type="text"
+                    name="title"
+                    value={this.state.title}
+                    onChange={this.handleChange}
+                    placeholder="Title"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="creator"
+                    value={this.state.creator}
+                    onChange={this.handleChange}
+                    placeholder="Creator"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="genre"
+                    value={this.state.genre}
+                    onChange={this.handleChange}
+                    placeholder="Genre"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="episodes"
+                    value={this.state.episodes}
+                    onChange={this.handleChange}
+                    placeholder="Episodes"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="description"
+                    value={this.state.description}
+                    onChange={this.handleChange}
+                    placeholder="Description"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="poster"
+                    value={this.state.poster_url}
+                    onChange={this.handleChange}
+                    placeholder="Poster url"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    name="trailer"
+                    value={this.state.trailer_url}
+                    onChange={this.handleChange}
+                    placeholder="Trailer url"
+                  />
+                  <br />
+                  {/* <input type="submit" value="Delete Podcast" /> */}
+                  <br />
+                  <br />
+                  <footer className="modal-card-foot">
+                    <button type="submit" value="Edit Podcast" className="button is-success">Save changes</button>
+                    <button onClick={this.toggle} className="button">Cancel</button>
+                  </footer>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div >
     );
-   }
- }
- 
- export default EditPodcast;
+  }
+}
+
+export default EditPodcast;

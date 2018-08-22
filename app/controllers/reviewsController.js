@@ -3,10 +3,7 @@ const db =  require('../models/reviews');
 function showAll(req, res) {
     db.allPodReviews(req.params.id)
     .then(podReviews => {
-        res.json({
-            message: 'ok',
-            data: { podReviews },
-        });
+            res.json(podReviews);
     })
     .catch(err => {
         console.log(err);
