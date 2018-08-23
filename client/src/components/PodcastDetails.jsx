@@ -15,7 +15,9 @@ export default (props) => {
         <h4>Number of Episodes: <span>{props.podcast[0].episodes}</span></h4>
         <h4>Description: <span>{props.podcast[0].description}</span></h4>
         <br />
+        {props.podcast[0].trailer_url ? 
         <a href={props.podcast[0].trailer_url}>Click here for podcast</a>
+        : null}
       </div>)
   } else {
     return (
