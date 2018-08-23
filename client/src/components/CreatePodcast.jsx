@@ -28,6 +28,15 @@ class CreatePodcast extends Component {
     evt.preventDefault();
     this.props.onSubmit(this.state);
     console.log('Submitting', this.state);
+    this.setState({
+      title: '',
+      creator: '',
+      genre: '',
+      episodes: '',
+      description: '',
+      trailer_url: '',
+      poster_url: 'https://static.thenounproject.com/png/187803-200.png'
+    })
     this.props.toggle('createModal');
   }
 

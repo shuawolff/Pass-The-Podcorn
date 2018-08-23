@@ -33,7 +33,6 @@ class CreateReview extends Component {
        // const options = this.parsePodcastOptions(podcasts);
         return (
             <div>
-                <button onClick={this.props.toggle}>Create Review</button>
                 <div className={this.props.active}>
                     <div className="modal-background"></div>
                     <div className="modal-card">
