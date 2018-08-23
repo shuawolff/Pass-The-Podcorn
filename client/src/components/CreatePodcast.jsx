@@ -11,7 +11,7 @@ class CreatePodcast extends Component {
       episodes: '',
       description: '',
       poster_url: 'https://static.thenounproject.com/png/187803-200.png',
-      trailer_url: ''
+      trailer_url: '' 
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -56,12 +56,12 @@ class CreatePodcast extends Component {
                   <input
                     type="text"
                     name="title"
-                    required="required"
+                    required="required" 
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder="Title"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
                     name="creator"
@@ -93,7 +93,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Episodes"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
                     name="description"
@@ -102,21 +102,21 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Description"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
-                    name="poster_url"
+                    name="poster"
                     value={this.state.poster_url}
                     onChange={this.handleChange}
-                    placeholder="Poster Url"
+                    placeholder="Poster url"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
-                    name="trailer_url"
+                    name="trailer"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer Url"
+                    placeholder="Trailer url"
                   />
                   <br />
                   <br />

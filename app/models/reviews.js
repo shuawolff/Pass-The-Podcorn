@@ -16,11 +16,11 @@ function onePodReview(id) {
     `, id)
 }
 
-function createPodReviews(review) {
+function createPodReviews(review, id) {
     return db.one(
         `
         INSERT INTO reviews (username, content, podcast_id)
-        VALUES ($/username/, $/content/, $/podcast_id/)
+        VALUES ($/username/, $/content/, ${id})
         RETURNING *
         `, review);
 };
