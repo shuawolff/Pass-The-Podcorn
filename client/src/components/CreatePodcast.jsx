@@ -28,7 +28,7 @@ class CreatePodcast extends Component {
     evt.preventDefault();
     this.props.onSubmit(this.state);
     console.log('Submitting', this.state);
-    this.toggle();
+    this.props.toggle('createModal');
   }
 
   handleChange(evt) {

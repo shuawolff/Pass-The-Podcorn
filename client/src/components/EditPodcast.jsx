@@ -36,6 +36,10 @@ class EditPodcast extends Component {
       })
     }
   }
+  toggle(e) {
+    e.preventDefault();
+    this.props.toggle('editModal');
+  }
 
   handleSubmit(evt) {
     evt.preventDefault();
@@ -50,19 +54,15 @@ class EditPodcast extends Component {
       id: this.state.id
     }
     this.props.onSubmit(data);
-    this.props.toggle();
-  }
-
-  toggle(e) {
-    e.preventDefault();
     this.props.toggle('editModal');
   }
+
 
   delete(e) {
     debugger
     e.preventDefault();
     this.props.delete(this.state.id)
-    this.props.toggle();
+    this.props.toggle('editModal');
   }
 
   handleChange(evt) {

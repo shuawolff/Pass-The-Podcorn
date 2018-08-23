@@ -28,19 +28,9 @@ class CreateReview extends Component {
             [name]: value,
         });
     }
-/*
-    parsePodcastOptions(podcasts) {
-        return podcasts.map(podcast => ({
-            value: podcast.podcast_id,
-            display: `${podcast.title} ${podcast.creator}`
-        }));
-    }
-*/
+
     render() {
-        const { podcasts } = this.props;
        // const options = this.parsePodcastOptions(podcasts);
-
-
         return (
             <div>
                 <button onClick={this.props.toggle}>Create Review</button>
