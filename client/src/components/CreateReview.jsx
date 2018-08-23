@@ -30,7 +30,6 @@ class CreateReview extends Component {
     }
 
     render() {
-       // const options = this.parsePodcastOptions(podcasts);
         return (
             <div>
                 <div className={this.props.active}>
@@ -62,20 +61,6 @@ class CreateReview extends Component {
                                         onChange={this.handleChange}
                                         placeholder="Review goes here"
                                     />
-                                    <br />
-                                    {/* <select
-                                        value={this.state.podcast_id}
-                                        onChange={this.handleChange}
-                                        name="podcast_id"
-                                    >
-                                        {options.map(podcast => (
-                                            <option
-                                                key={podcast.value}
-                                                value={podcast.value}>
-                                                {podcast.display}
-                                            </option>
-                                        ))}
-                                    </select> */}
                                     <br />
                                     <br />
                                     <footer className="modal-card-foot">

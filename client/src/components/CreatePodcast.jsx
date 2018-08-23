@@ -142,6 +142,7 @@ class CreatePodcast extends Component {
                   <footer className="modal-card-foot">
                     <button type="submit" value="Create Podcast" className="button is-success">Create Podcast</button>
                     <button onClick={this.toggle} className="button">Cancel</button>
+                    <button onClick={this.delete} className="button is-danger">Delete Podcast</button>
                   </footer>
                 </form>
               </div>

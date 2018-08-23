@@ -76,6 +76,16 @@
   h2 {
     color: rgb(255, 0, 0);
   }
+  h4 {
+    color:red;
+    font-size: 20px;
+  }
+
+  span {
+    color: rgb(196, 196, 209);
+    font-size: 18px;
+  }
+
   h2.title {
     display: inline-block;
     margin-right: auto;
@@ -98,6 +108,14 @@
     margin-top: 10px;
     margin-bottom: 30px;
   }
+
+.reviews-1 {
+  color: #acac62;
+}
+
+.reviews-2 {
+  color: blueviolet;
+}
 
   h2.pass {
     padding-right: 7px;
@@ -210,6 +228,11 @@
   z-index: 3;
 }
 
+.podcastThumb {
+  height: 200px;
+  width: 200px;
+}
+
 @media screen and (min-width: 75rem) {
   /* Layout Elements */
 
@@ -218,3 +241,4 @@
     grid-template-columns: 1fr 3fr 1fr;
   }
 }
+

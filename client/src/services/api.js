@@ -67,8 +67,6 @@ export function updatePodcast(podcast) {
 };
 
 
-
-
   export function deletePodcast(podcast_id) {
     const opts ={
       method: 'DELETE',
@@ -82,3 +80,17 @@ export function updatePodcast(podcast) {
       throw Error(err);
     })
   };
+
+  export function deleteReview(review_id) {
+    const opts ={
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    return fetch(`${BASE_URL}/reviews/${review_id}`, opts)
+    .then(resp => "deleted")
+    .catch(err => {
+      throw Error(err);
+    })
+  }; 

@@ -6,7 +6,7 @@ import PodcastIndex from './components/PodcastIndex';
 import ReviewIndex from './components/ReviewIndex';
 import PodcastDetails from './components/PodcastDetails';
 import CreateReview from './components/CreateReview';
-import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast, saveReview, deletePodcast } from './services/api';
+import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast, saveReview, deletePodcast, deleteReview } from './services/api';
 import './App.css';
 import Footer from './components/Footer';
 
@@ -39,6 +39,7 @@ class App extends Component {
     this.toggleCreateReviewModal = this.toggleCreateReviewModal.bind(this);
     this.deletePodcast = this.deletePodcast.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
   }
 
 
@@ -127,6 +128,17 @@ class App extends Component {
       });
   }
 
+
+  deleteReview(id) {
+    deleteReview(id)
+      .then(data => {
+        fetchReviews()
+          .then(data => this.setState({
+            reviews: data,
+          }));
+      });
+  }
+
   onSubmit(podcast) {
     savePodcast(podcast)
       .then(data => {
@@ -165,7 +177,7 @@ class App extends Component {
       <div className="App main-grid">
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleModal} />
-        <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} />
+        <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} delete={this.deleteReview}/>
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar} />
         <ReviewIndex reviews={this.state.reviews} create={this.toggleCreateReviewModal} podcastSelected={this.state.podcastDetails} />
         <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} /> {this.state.selectedPodcast ?
