@@ -8,7 +8,7 @@ export default (props) => {
         <h3 className="heading-3">Reviews<br /></h3>
         <button onClick={props.create}>Create Review</button>
         {props.reviews.map(review => (
-          <div>
+          <div key={review.review_id}>
             <h4 className="reviews-1" key={review.review_id}>{review.username}'s <span className="reviews-2">Review:</span> <span>{review.content}</span></h4>
           </div>
         ))}

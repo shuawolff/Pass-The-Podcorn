@@ -177,11 +177,11 @@ class App extends Component {
       <div className="App main-grid">
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleModal} />
-        <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} delete={this.deleteReview}/>
+        <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} delete={this.deleteReview} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar} />
         <ReviewIndex reviews={this.state.reviews} create={this.toggleCreateReviewModal} podcastSelected={this.state.podcastDetails} />
         <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} /> {this.state.selectedPodcast ?
-        <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleModal} delete={this.deletePodcast} />
+          <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleModal} delete={this.deletePodcast} />
           : null}
         <Footer />
       </div>

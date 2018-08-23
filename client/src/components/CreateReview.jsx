@@ -8,19 +8,18 @@ class CreateReview extends Component {
             username: '',
             content: '',
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    
+
     handleSubmit(evt) {
         evt.preventDefault();
         this.props.onSubmit(this.state);
         console.log('Submitting', this.state);
         this.props.toggle();
     }
-    
+
 
     handleChange(evt) {
         const { name, value } = evt.target;
@@ -42,7 +41,7 @@ class CreateReview extends Component {
                         <section className="modal-card-body">
                             <div>
                                 <form onSubmit={this.handleSubmit}>
-                                <label>Username:</label>
+                                    <label>Username:</label>
                                     <input
                                         type="text"
                                         name="username"
@@ -53,7 +52,10 @@ class CreateReview extends Component {
                                     />
                                     <br />
                                     <label>Review:</label>
-                                    <input
+                                    <textarea
+                                        className='textarea'
+                                        id="genreText"
+                                        rows='2'
                                         type="text"
                                         name="content"
                                         required="required"
