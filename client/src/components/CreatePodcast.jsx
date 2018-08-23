@@ -11,7 +11,7 @@ class CreatePodcast extends Component {
       episodes: '',
       description: '',
       poster_url: 'https://static.thenounproject.com/png/187803-200.png',
-      trailer_url: '' 
+      trailer_url: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -62,15 +62,17 @@ class CreatePodcast extends Component {
             <section className="modal-card-body">
               <div>
                 <form onSubmit={this.handleSubmit}>
+                <label>Title:</label>
                   <input
                     type="text"
                     name="title"
-                    required="required" 
+                    required="required"
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder="Title"
                   />
-                  <br/>
+                  <br />
+                  <label>Creator:</label>
                   <input
                     type="text"
                     name="creator"
@@ -80,10 +82,11 @@ class CreatePodcast extends Component {
                     placeholder="Creator"
                   />
                   <br />
-                  <select 
-                  name="genre"
-                  onChange={this.handleChange}
-                  required="required"
+                  <label>Genre:</label>
+                  <select
+                    name="genre"
+                    onChange={this.handleChange}
+                    required="required"
                   >
                     <option value="" disabled selected hidden>Select Genre</option>
                     <option value="Horror">Horror</option>
@@ -93,17 +96,22 @@ class CreatePodcast extends Component {
                     <option value="True Crime">True Crime</option>
                     <option value="General">General</option>
                   </select>
-                  <br/>
+                  <br />
+                  <label>Episodes:</label>
                   <input
                     type="number"
                     name="episodes"
                     required="required"
                     value={this.state.episodes}
                     onChange={this.handleChange}
-                    placeholder="Episodes"
+                    placeholder="Number of Episodes"
                   />
-                  <br/>
-                  <input
+                  <br />
+                  <label>Description:</label>
+                  <textarea
+                    className='textarea'
+                    id="genreText"
+                    rows='2'
                     type="text"
                     name="description"
                     required="required"
@@ -111,7 +119,8 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Description"
                   />
-                  <br/>
+                  <br />
+                  <label>Poster Url:</label>
                   <input
                     type="text"
                     name="poster"
@@ -119,13 +128,14 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Poster url"
                   />
-                  <br/>
+                  <br />
+                  <label>Podcast Link:</label>
                   <input
                     type="text"
                     name="trailer"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer url"
+                    placeholder="Podcast Link"
                   />
                   <br />
                   <br />

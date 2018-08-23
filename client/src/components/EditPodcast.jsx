@@ -90,6 +90,7 @@ class EditPodcast extends Component {
             <section className="modal-card-body">
               <div>
                 <form onSubmit={this.handleSubmit}>
+                  <label>Title:</label>
                   <input
                     type="text"
                     name="title"
@@ -98,6 +99,7 @@ class EditPodcast extends Component {
                     placeholder="Title"
                   />
                   <br />
+                  <label>Creator:</label>
                   <input
                     type="text"
                     name="creator"
@@ -106,23 +108,34 @@ class EditPodcast extends Component {
                     placeholder="Creator"
                   />
                   <br />
-                  <input
-                    type="text"
-                    name="genre"
-                    value={this.state.genre}
-                    onChange={this.handleChange}
-                    placeholder="Genre"
-                  />
+                  <label>Genre:</label><select 
+                  name="genre"
+                  onChange={this.handleChange}
+                  required="required"
+                  >
+                    <option value={this.state.genre} disabled selected hidden>{this.state.genre}</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Political">Political</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="True Crime">True Crime</option>
+                    <option value="General">General</option>
+                  </select>
                   <br />
+                  <label>Episodes:</label>
                   <input
                     type="text"
                     name="episodes"
                     value={this.state.episodes}
                     onChange={this.handleChange}
-                    placeholder="Episodes"
+                    placeholder="Number of Episodes"
                   />
                   <br />
-                  <input
+                  <label>Description:</label>
+                  <textarea
+                    className='textarea'
+                    id="genreText"
+                    rows='2'
                     type="text"
                     name="description"
                     value={this.state.description}
@@ -130,6 +143,7 @@ class EditPodcast extends Component {
                     placeholder="Description"
                   />
                   <br />
+                  <label>Poster Url:</label>
                   <input
                     type="text"
                     name="poster_url"
@@ -138,12 +152,13 @@ class EditPodcast extends Component {
                     placeholder="Poster Url"
                   />
                   <br />
+                  <label>Podcast Link:</label>
                   <input
                     type="text"
                     name="trailer_url"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer Url"
+                    placeholder="Podcast Link"
                   />
                   <br />
                   <br />

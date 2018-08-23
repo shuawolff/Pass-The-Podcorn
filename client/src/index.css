@@ -39,3 +39,24 @@ li {
 .black {
   color: black;
 }
+
+select {
+  width: 218px;
+}
+
+textarea {
+  width: 218px
+}
+
+#genreText {
+  display: inline-block;
+  max-width: 217px;
+  min-width: 217px;
+}
+
+label {
+  font-size: 21px;
+  width: 137px;
+  text-align: right;
+  padding-right: 7px;
+}
