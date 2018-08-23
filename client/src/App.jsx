@@ -154,7 +154,6 @@ class App extends Component {
         [modal]: 'modal'
       })
   }
-
   createPodcast(podcast) {
     savePodcast(podcast)
       .then(data => {
@@ -204,5 +203,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
