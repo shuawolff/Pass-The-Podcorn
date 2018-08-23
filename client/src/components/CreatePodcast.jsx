@@ -16,13 +16,19 @@ class CreatePodcast extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle(e) {
+    e.preventDefault();
+    this.props.toggle('createModal')
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.onSubmit(this.state);
     console.log('Submitting', this.state);
-    this.props.toggle();
+    this.toggle();
   }
 
   handleChange(evt) {
@@ -32,16 +38,17 @@ class CreatePodcast extends Component {
     });
   }
 
+
   render() {
     return (
       <div>
-        <button onClick={this.props.toggle}>Create Podcast</button>
+        <button onClick={this.toggle}>Create Podcast</button>
         <div className={this.props.active}>
           <div className="modal-background"></div>
           <div className="modal-card">
             <header className="modal-card-head">
               <p className="modal-card-title">Create Podcast</p>
-              <button onClick={this.props.toggle} className="delete" aria-label="close"></button>
+              <button onClick={this.toggle} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
               <div>
@@ -67,7 +74,9 @@ class CreatePodcast extends Component {
                   <select 
                   name="genre"
                   onChange={this.handleChange}
+                  required="required"
                   >
+                    <option value="" disabled selected hidden>Select Genre</option>
                     <option value="Horror">Horror</option>
                     <option value="Comedy">Comedy</option>
                     <option value="Political">Political</option>
@@ -113,7 +122,7 @@ class CreatePodcast extends Component {
                   <br />
                   <footer className="modal-card-foot">
                     <button type="submit" value="Create Podcast" className="button is-success">Create Podcast</button>
-                    <button onClick={this.props.toggle} className="button">Cancel</button>
+                    <button onClick={this.toggle} className="button">Cancel</button>
                   </footer>
                 </form>
               </div>

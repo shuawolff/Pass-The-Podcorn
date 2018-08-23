@@ -55,13 +55,14 @@ class EditPodcast extends Component {
 
   toggle(e) {
     e.preventDefault();
-    this.props.toggle();
+    this.props.toggle('editModal');
   }
 
   delete(e) {
     debugger
     e.preventDefault();
     this.props.delete(this.state.id)
+    this.props.toggle();
   }
 
   handleChange(evt) {
@@ -84,7 +85,7 @@ class EditPodcast extends Component {
           <div className="modal-card">
             <header className="modal-card-head">
               <p className="modal-card-title">Edit Podcast</p>
-              <button onClick={this.props.toggle} className="delete" aria-label="close"></button>
+              <button onClick={this.toggle} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
               <div>
@@ -145,7 +146,6 @@ class EditPodcast extends Component {
                     placeholder="Trailer Url"
                   />
                   <br />
-                  {/* <input type="submit" value="Delete Podcast" /> */}
                   <br />
                   <br />
                   <footer className="modal-card-foot">

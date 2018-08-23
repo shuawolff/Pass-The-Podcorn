@@ -16,6 +16,7 @@ class PodcastIndex extends Component {
   }
 
   render() {
+    // Filters podcast by Genre
     let filteredList = [];
     this.props.filter === 'All' ? filteredList = this.props.podcasts
       :
@@ -23,6 +24,7 @@ class PodcastIndex extends Component {
         return podcast.genre === this.props.filter
       })
     
+      // Allows the updated podcast list to be searchable from the search bar
     let afterSearch = filteredList.filter(podcast => podcast.title.toLowerCase().includes(this.state.search.toLowerCase()));
 
     return (
