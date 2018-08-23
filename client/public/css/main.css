@@ -5,7 +5,7 @@
   padding-bottom: 10px;
   min-height: 100vh;
   background-color: #eee;
-  color: white;
+  color: black;
   grid-template-areas: 'header header' 'main aside-1' 'main aside-2' 'main aside-2' 'footer footer';
   grid-template-columns: 3fr 2fr;
   grid-row-gap: 2px;
@@ -30,7 +30,7 @@
 
 .container-grid.aside-1 {
   background-color: #d27a87;
-
+  height: 45vh;
   grid-area: aside-1;
 }
 
@@ -42,13 +42,12 @@
 
 .container-grid.aside-2 {
   background-color: #699b3b;
-
+  height: 35vh;
   grid-area: aside-2;
 }
 
 .container-grid.footer {
-  background-color: #7e4185;
-
+  background-color: #eee;
   grid-area: footer;
 }
 
@@ -68,23 +67,24 @@
     padding-right: 7px;
     font-style: italic;
     font-size: 26px;
-    color: rgb(246,255,0);
+    color: rgb(255,255,255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   }
   h3 {
-    color: rgb(246,255,0);
+    color: rgb(255, 0, 0);
   }
   h2 {
-    color: rgb(246,255,0);
+    color: rgb(255, 0, 0);
   }
   h2.title {
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
-    color: rgb(246,255,0);
+    margin-top: 15px;
+    color: rgb(255,255,255);
     vertical-align: text-top;
     text-align: center;
-    font-size: 33px;
+    font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
     line-height: .6;
 
@@ -95,6 +95,8 @@
 
   h2.heading-1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
 
   h2.pass {
@@ -102,7 +104,7 @@
   }
 
   h2.pass.title {
-    color: rgb(246,255,0);
+    color: rgb(255,255,255);
   }
 
   h3.heading-2 {
@@ -121,23 +123,24 @@
   }
 
   .container-grid.header {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(255, 0, 0);
+    height: 120px;
   }
 
   .container-grid.main.podcasts {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(255,255,255);
   }
 
   .container-grid.aside-1.podcastDetails {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(255,255,255);
   }
 
   .container-grid.aside-2.reviews {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(255,255,255);
   }
 
   .container-grid.footer {
-    background-color: rgb(64, 64, 64);
+    background-color: #eee;
     background-image: none;
     background-attachment: scroll;
     background-position: left top;
@@ -145,13 +148,66 @@
     background-origin: padding-box;
     background-size: 0 0;
     background-repeat: no-repeat;
-
     background-blend-mode: normal;
   }
 
   button.btn.podcastSortBtn {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    padding: 5px;
+    margin: 10px;
+    border: black;
   }
+
+  .sortBtnDiv {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+  }
+
+  .sortBtnDiv input {
+    border-radius: 3px;
+    margin-top: 3px;
+  }
+
+  .createBtnDiv {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+  }
+  .createBtnDiv button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    padding: 5px;
+    margin: 10px;
+    border: black;
+    border-radius: 3px;
+  }
+}
+
+/* Assets */
+
+#cacheMoneyGif {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  left: 550px;
+  bottom: 90px;
+  z-index: 3;
+}
+#logo {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  bottom: -75px;
+  left: 480px;
+}
+
+#milliGif {
+  width: 230px;
+  height: 50px;
+  position: absolute;
+  left: 510px;
+  bottom: -20px;
+  z-index: 3;
 }
 
 @media screen and (min-width: 75rem) {
