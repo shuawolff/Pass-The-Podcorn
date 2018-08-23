@@ -9,6 +9,7 @@ class PodcastIndex extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
+  // Changes state based on user input into search bar
   handleChange(evt) {
     this.setState({
       search: evt.target.value,

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class EditPodcast extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       title: this.props.podcast.title,
       creator: this.props.podcast.creator,
@@ -13,16 +12,15 @@ class EditPodcast extends Component {
       poster_url: this.props.podcast.poster_url,
       trailer_url: this.props.podcast.trailer_url,
       id: this.props.podcast.id
-    };
-
+    }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.toggle =  this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.delete = this.delete.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
+    // Checks if the props changed and if so resets the state
     if (this.props.podcast.id !== prevProps.podcast.id) {
       this.setState({
         title: this.props.podcast.title,
@@ -36,11 +34,13 @@ class EditPodcast extends Component {
       })
     }
   }
+  // Toggles Modal
   toggle(e) {
     e.preventDefault();
     this.props.toggle('editModal');
   }
 
+  // Handles when edit form is submitted and resets form
   handleSubmit(evt) {
     evt.preventDefault();
     const data = {
@@ -57,14 +57,14 @@ class EditPodcast extends Component {
     this.props.toggle('editModal');
   }
 
-
+  // Handles if the delete button is clicked to delete the podcast
   delete(e) {
-    debugger
     e.preventDefault();
     this.props.delete(this.state.id)
     this.props.toggle('editModal');
   }
 
+  // Changes state based on user input into form
   handleChange(evt) {
     const { name, value } = evt.target;
     this.setState({
@@ -72,11 +72,7 @@ class EditPodcast extends Component {
     });
   }
 
-  onClick(evt) {
-    const id = evt.target.podcast_id
-    this.props.deletePodcast(id)
-  }
-
+  // Renders Modal to edit a podcast (using Bulma)
   render() {
     return (
       <div>
@@ -108,11 +104,10 @@ class EditPodcast extends Component {
                     placeholder="Creator"
                   />
                   <br />
-                  <label>Genre:</label><select 
-                  name="genre"
-                  onChange={this.handleChange}
-                  required="required"
-                  >
+                  <label>Genre:</label><select
+                    name="genre"
+                    onChange={this.handleChange}
+                    required="required">
                     <option value={this.state.genre} disabled selected hidden>{this.state.genre}</option>
                     <option value="Horror">Horror</option>
                     <option value="Comedy">Comedy</option>

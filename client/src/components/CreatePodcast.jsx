@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class CreatePodcast extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       title: '',
       creator: '',
@@ -12,22 +11,22 @@ class CreatePodcast extends Component {
       description: '',
       poster_url: 'https://static.thenounproject.com/png/187803-200.png',
       trailer_url: ''
-    };
-
+    }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
+  // Toggles the modal
   toggle(e) {
     e.preventDefault();
     this.props.toggle('createModal')
   }
 
+  // Handles when the submit button is pressed to create the new podcast and reset the form
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.onSubmit(this.state);
-    console.log('Submitting', this.state);
     this.setState({
       title: '',
       creator: '',
@@ -40,6 +39,7 @@ class CreatePodcast extends Component {
     this.props.toggle('createModal');
   }
 
+  // Changes state based on user input into form
   handleChange(evt) {
     const { name, value } = evt.target;
     this.setState({
@@ -47,7 +47,7 @@ class CreatePodcast extends Component {
     });
   }
 
-
+// Renders Modal to create a new podcast (using Bulma)
   render() {
     return (
       <div className="createBtnDiv">
@@ -62,7 +62,7 @@ class CreatePodcast extends Component {
             <section className="modal-card-body">
               <div>
                 <form onSubmit={this.handleSubmit}>
-                <label>Title:</label>
+                  <label>Title:</label>
                   <input
                     type="text"
                     name="title"
@@ -86,8 +86,7 @@ class CreatePodcast extends Component {
                   <select
                     name="genre"
                     onChange={this.handleChange}
-                    required="required"
-                  >
+                    required="required">
                     <option value="" disabled selected hidden>Select Genre</option>
                     <option value="Horror">Horror</option>
                     <option value="Comedy">Comedy</option>
@@ -142,7 +141,6 @@ class CreatePodcast extends Component {
                   <footer className="modal-card-foot">
                     <button type="submit" value="Create Podcast" className="button is-success">Create Podcast</button>
                     <button onClick={this.toggle} className="button">Cancel</button>
-                    <button onClick={this.delete} className="button is-danger">Delete Podcast</button>
                   </footer>
                 </form>
               </div>
