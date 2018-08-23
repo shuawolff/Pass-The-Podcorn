@@ -64,15 +64,18 @@ class CreatePodcast extends Component {
                     placeholder="Creator"
                   />
                   <br />
-                  <input
-                    type="text"
-                    name="genre"
-                    required="required"
-                    value={this.state.genre}
-                    onChange={this.handleChange}
-                    placeholder="Genre"
-                  />
-                  <br />
+                  <select 
+                  name="genre"
+                  onChange={this.handleChange}
+                  >
+                    <option value="Horror">Horror</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Political">Political</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="True Crime">True Crime</option>
+                    <option value="General">General</option>
+                  </select>
+                  <br/>
                   <input
                     type="number"
                     name="episodes"
@@ -109,7 +112,7 @@ class CreatePodcast extends Component {
                   <br />
                   <br />
                   <footer className="modal-card-foot">
-                    <button type="submit" value="Create Podcast" className="button is-success">Save changes</button>
+                    <button type="submit" value="Create Podcast" className="button is-success">Create Podcast</button>
                     <button onClick={this.props.toggle} className="button">Cancel</button>
                   </footer>
                 </form>

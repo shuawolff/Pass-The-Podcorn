@@ -5,7 +5,7 @@ import EditPodcast from './components/EditPodcast';
 import PodcastIndex from './components/PodcastIndex';
 import ReviewIndex from './components/ReviewIndex';
 import PodcastDetails from './components/PodcastDetails';
-import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
+import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast, deletePodcast } from './services/api';
 
 import './App.css';
 import Footer from './components/Footer';
@@ -36,6 +36,7 @@ class App extends Component {
     this.toggleEditModal =  this.toggleEditModal.bind(this);
     this.genreFilter = this.genreFilter.bind(this);
     this.searchBar = this.searchBar.bind(this);
+    this.deletePodcast = this.deletePodcast.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,14 @@ class App extends Component {
       });
     }
 
+    deletePodcast(id) {
+      deletePodcast(id)
+      .then(data => {
+        fetchPodcasts()
+        .then(data => this.setState({ podcasts: data }));
+        });
+      }
+
     searchBar(data) {
       this.setState({
         searchBar: data
@@ -133,7 +142,7 @@ class App extends Component {
         <ReviewIndex reviews={this.state.reviews}/>
         <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} />
         {this.state.selectedPodcast ?
-          <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
+          <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal} delete={this.deletePodcast}/>
           : null}
     <Footer />
       </div>
