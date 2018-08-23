@@ -16,4 +16,3 @@ export default (props) => {
             <p>Select a podcast to view details and edit</p>
         </div>)
     }
-}

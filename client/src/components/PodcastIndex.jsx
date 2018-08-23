@@ -26,7 +26,6 @@ class PodcastIndex extends Component {
     
       // Allows the updated podcast list to be searchable from the search bar
     let afterSearch = filteredList.filter(podcast => podcast.title.toLowerCase().includes(this.state.search.toLowerCase()));
-
     return (
       <div className="container-grid main podcasts">
         <h2 className="heading-1">Podcasts</h2>

@@ -26,9 +26,9 @@ function showOne(req, res) {
 };
 
 function create(req, res) {
-    db.createPodReviews(req.body)
+    db.createPodReviews(req.body, req.params.id)
       .then(podcast => {
-        res.json({message: 'ok', data: { podcast }});
+        res.json(podcast);
       })
       .catch(err => {
         console.log(err);
