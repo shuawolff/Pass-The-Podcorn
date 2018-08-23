@@ -33,7 +33,10 @@ class PodcastIndex extends Component {
         <SortButtons search={this.handleChange} filterFunction={this.props.filterFunction} searchBar={this.state.search} />
         {afterSearch.map(podcast => (
           <div className="list-container" key={podcast.id}>
-            <a onClick={(e) => this.props.view(podcast.id, [podcast])}><img src={podcast.poster_url} alt="Podcast Poster"/><p className='podcastList' key={podcast.id}>{podcast.title}<br/>Creator: {podcast.creator}</p></a>
+            <a onClick={(e) => this.props.view(podcast.id, [podcast])}>
+            <img src={podcast.poster_url} alt="Podcast Poster"/>
+            <p className='podcastList' key={podcast.id}><span className="podcastTitle">{podcast.title}</span><br/>Creator: {podcast.creator}</p>
+            </a>
           </div>))}
       </div>
     )

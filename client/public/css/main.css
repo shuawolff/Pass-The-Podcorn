@@ -13,8 +13,7 @@
 }
 
 .container-grid.header {
-  background-color: #907dc5;
-
+  background-color: rgb(255, 0, 0);
   grid-area: header;
 }
 
@@ -29,20 +28,22 @@
 }
 
 .container-grid.aside-1 {
-  background-color: #d27a87;
+  background-color: #fff;
   height: 45vh;
+  overflow-y: scroll;
   grid-area: aside-1;
 }
 
 .container-grid.main {
-  background-color: #acac62;
+  background-color: #fff;
   height: 80vh;
   grid-area: main;
 }
 
 .container-grid.aside-2 {
-  background-color: #699b3b;
+  background-color: #fff;
   height: 35vh;
+  overflow-y: scroll;
   grid-area: aside-2;
 }
 
@@ -95,7 +96,8 @@
     vertical-align: text-top;
     text-align: center;
     font-size: 36px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;*/
     line-height: .6;
 
     -webkit-align-self: auto;
@@ -226,6 +228,14 @@
   left: 510px;
   bottom: -20px;
   z-index: 3;
+}
+
+#ptpLogo {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: -30px;
+  left: 435px;
 }
 
 .podcastThumb {

@@ -27,9 +27,16 @@ img {
 }
 
 .podcastList {
+
   width: 350px;
   display: inline-block;
   font-size: 20px;
+}
+
+.podcastTitle {
+  font-family: 'Cabin Sketch', cursive;
+   color: rgb(63, 57, 57);
+   font-size: 30px;
 }
 
 li {

@@ -56,9 +56,12 @@ function showAll(req, res) {
 
 ## Appshots & Wireframes
 ![Wireframe](/wireframes/ERD.png)
-![Wireframe](/wireframes/ShowAll.png)
-![Wireframe](/wireframes/AddPodcast.png)
+![Wireframe](/wireframes/ShowAllShowOne.png)
+![Wireframe](/wireframes/CreatePodcast.png)
+![Wireframe](/wireframes/PodcastVotes.png)
+![Wireframe](/wireframes/SortByGenre.png)
 ![Wireframe](/wireframes/PodcastReview.png)
+
 
 
 
