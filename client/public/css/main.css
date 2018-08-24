@@ -113,10 +113,12 @@
 
 .reviews-1 {
   color: #acac62;
+  font-weight: 600;
 }
 
 .reviews-2 {
-  color: blueviolet;
+  color: #acac62;
+  font-weight: 600;
 }
 
   h2.pass {
