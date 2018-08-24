@@ -20,7 +20,7 @@ After creating both a functional front-end and back-end, we used CSS and Bulma t
 
 ## App Link
 
-http://uttermost-lake.surge.sh/
+frantic-achieve.surge.sh
 
 ## MVP
 1. CRUD functionality for podcasts
