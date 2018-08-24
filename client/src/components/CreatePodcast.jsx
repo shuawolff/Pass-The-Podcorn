@@ -122,7 +122,7 @@ class CreatePodcast extends Component {
                   <label>Poster Url:</label>
                   <input
                     type="text"
-                    name="poster"
+                    name="poster_url"
                     value={this.state.poster_url}
                     onChange={this.handleChange}
                     placeholder="Poster url"
@@ -131,7 +131,7 @@ class CreatePodcast extends Component {
                   <label>Podcast Link:</label>
                   <input
                     type="text"
-                    name="trailer"
+                    name="trailer_url"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
                     placeholder="Podcast Link"
