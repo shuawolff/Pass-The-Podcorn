@@ -83,7 +83,7 @@
   }
 
   span {
-    color: rgb(196, 196, 209);
+    color: black;
     font-size: 18px;
   }
 
@@ -235,7 +235,7 @@
   height: 180px;
   position: absolute;
   top: -30px;
-  left: 435px;
+  left: 310px;
 }
 
 .podcastThumb {
