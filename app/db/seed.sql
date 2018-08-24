@@ -196,7 +196,7 @@ INSERT INTO podcasts (title, creator, genre, episodes, description, poster_url, 
     'General',
     341,
     'Dr. Drew Pinsky, board certified internist and addiction medicine specialist, takes listener calls and talks to experts on a variety of topics relating to health, relationships, sex and drug addiction.',    
-    'https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/be/51/4c/be514cb2-fb60-c8e5-6fff-c2d5206061f1/source/170x170bb.jpg',
+    'https://www.podcastone.com/images/logos/300x300/drdrew_4_18_300.jpg',
     'https://www.artofmanliness.com/'
 ),
 (
@@ -213,8 +213,8 @@ INSERT INTO podcasts (title, creator, genre, episodes, description, poster_url, 
     'WNYC',
     'General',
     000,
-    'Full Stack Developers Wes Bos and Scott Tolinski dive deep into web development topics, explaining how they work and talking about their own experiences. They cover from JavaScript frameworks like React, to the latest advancements in CSS to simplifying web tooling.',    'https://syntax.fm/'
-    'https://is1-ssl.mzstatic.com/image/thumb/Music117/v4/40/e5/ef/40e5ef3c-f5b9-20df-14cc-e5c38d50a8da/source/600x600bb.jpg',
+    'Full Stack Developers Wes Bos and Scott Tolinski dive deep into web development topics, explaining how they work and talking about their own experiences. They cover from JavaScript frameworks like React, to the latest advancements in CSS to simplifying web tooling.',    
+    'https://pbs.twimg.com/media/DlOJ8aoWwAAqfSJ.jpg',
     'https://syntax.fm/'
 );
 

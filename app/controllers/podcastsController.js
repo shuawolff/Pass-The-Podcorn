@@ -9,7 +9,7 @@ function showAll(req, res) {
       console.log(err);
       res.status(400).json({ message: '400', err });
     });
-};
+}
 
 function showOne(req, res) {
   db.onePodcast(req.params.id)
@@ -20,7 +20,7 @@ function showOne(req, res) {
       console.log(err);
       res.status(400).json({ message: '400', err });
     });
-};
+}
 
 function createPodcast(req, res) {
   db.createPodcast(req.body)
@@ -34,7 +34,7 @@ function createPodcast(req, res) {
       console.log(err);
       res.status(400).json({ message: '400', err });
     });
-};
+}
 
 function updatePodcast(req, res) {
   db.updatePodcast(req.body, req.params.id)
@@ -56,7 +56,6 @@ function deletePodcast(req, res) {
       });
     })
 }
-
 
 
 module.exports = {
