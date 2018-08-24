@@ -1,54 +1,55 @@
 const { db } = require('../config/conn');
 
 function allPodReviews(id) {
-    return db.query(`
+  return db.query(`
     SELECT * 
     FROM reviews
     WHERE podcast_id = $1
-    `, id)
-};
+    `, id);
+}
 
 function onePodReview(id) {
-    return db.one(`
+  return db.one(`
     SELECT *
     FROM reviews
     WHERE review_id = $1
-    `, id)
+    `, id);
 }
 
 function createPodReviews(review, id) {
-    return db.one(
-        `
+  return db.one(
+    `
         INSERT INTO reviews (username, content, podcast_id)
         VALUES ($/username/, $/content/, ${id})
         RETURNING *
-        `, review);
-};
+        `, review,
+  );
+}
 
 function updatePodReviews(review, id) {
-    return db.one(
-        `
+  return db.one(
+    `
                UPDATE reviews 
                SET username = $/username/, content = $/content/
                WHERE review_id = ${id}
                RETURNING *
-             `, review
-    );
-};
+             `, review,
+  );
+}
 
 function destroyPodReviews(id) {
-    return db.none(
-        `
+  return db.none(
+    `
                    DELETE FROM reviews
                    WHERE review_id = $1
-                 `, id
-    );
-};
+                 `, id,
+  );
+}
 
 module.exports = {
-    allPodReviews,
-    onePodReview,
-    createPodReviews,
-    updatePodReviews,
-    destroyPodReviews
-}
+  allPodReviews,
+  onePodReview,
+  createPodReviews,
+  updatePodReviews,
+  destroyPodReviews,
+};
