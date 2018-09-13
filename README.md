@@ -20,7 +20,7 @@ After creating both a functional front-end and back-end, we used CSS and Bulma t
 
 ## App Link
 
-frantic-achieve.surge.sh
+http://pass-the-podcorn.surge.sh/
 
 ## MVP
 1. CRUD functionality for podcasts
