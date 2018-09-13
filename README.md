@@ -1,7 +1,7 @@
 # Pass-The-Podcorn
 Pass the Podcorn is a podcast review app where users can see various podcasts and leave a review on a podcast if they've heard it before! They will have full CRUD capabilities with whatever podcasts they’ve created and can also add new podcasts and reviews. 
 
-
+<img width="1439" alt="screen shot 2018-08-26 at 11 19 24 pm" src="https://user-images.githubusercontent.com/39752800/44638760-8b257600-a986-11e8-9046-874cde94bc4b.png">
 
 ## Motivation
 
@@ -20,6 +20,7 @@ After creating both a functional front-end and back-end, we used CSS and Bulma t
 
 ## App Link
 
+http://pass-the-podcorn.surge.sh/
 
 ## MVP
 1. CRUD functionality for podcasts
@@ -35,21 +36,31 @@ After creating both a functional front-end and back-end, we used CSS and Bulma t
 ## Code Example
 ```javascript
 
-const db =  require('../models/podcasts');
-
-function showAll(req, res) {
-    db.allPodcasts()
-    .then(podcasts => {
-        res.json({
-            message: 'ok',
-            data: { podcasts },
-        });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(400).json({message: '400', err});
-    });
-};
+// Filters podcast by Genre
+    let filteredList = [];
+    this.props.filter === 'All' ? filteredList = this.props.podcasts
+      :
+      filteredList = this.props.podcasts.filter(podcast => {
+        return podcast.genre === this.props.filter
+      })
+    
+      // Allows the updated podcast list to be searchable from the search bar
+    let afterSearch = filteredList.filter(podcast => podcast.title.toLowerCase().includes(this.state.search.toLowerCase()));
+    return (
+      <div className="container-grid main podcasts">
+        <h2 className="heading-1">Podcasts</h2>
+        <SortButtons search={this.handleChange} filterFunction={this.props.filterFunction} searchBar={this.state.search} />
+        {afterSearch.map(podcast => (
+          <div className="list-container" key={podcast.id}>
+            <a onClick={(e) => this.props.view(podcast.id, [podcast])}>
+            <img src={podcast.poster_url} alt="Podcast Poster"/>
+            <p className='podcastList' key={podcast.id}><span className="podcastTitle">{podcast.title}</span><br/>Creator: {podcast.creator}</p>
+            </a>
+          </div>))}
+      </div>
+    )
+  }
+}
 
 
 ```
@@ -95,6 +106,9 @@ More can be found in the Wireframes folder.
 * Nodemon
 * PG-Promise
 * Body-Parser
+* Bulma
+* Balsamiq
+* CSS-Grid
 
  
 
@@ -114,9 +128,16 @@ To test it out yourself, feel free to fork and clone this repo.
 
 ## Credits
 
+### Idea for the podcasts
 * https://www.buzzfeed.com/scottybryan/27-podcasts-you-need-to-start-listening-to-in-2018?utm_term=.jaD2oaJDnV#.jibXyAB40p
 
-* 
+### Design of the wireframes
+* https://balsamiq.cloud/
+
+### CSS 
+* https://css-grid.coffeecup.com/css-grid-builder.html
+
+
 
 
 ## License
